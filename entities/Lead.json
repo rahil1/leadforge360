@@ -1,0 +1,64 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Lead full name"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "job_title": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number",
+      "description": "Potential deal value in USD"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "contacted",
+        "qualified",
+        "proposal",
+        "won",
+        "lost"
+      ],
+      "default": "new"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "csv_import",
+        "referral",
+        "website",
+        "social",
+        "other"
+      ],
+      "default": "manual"
+    },
+    "assigned_to": {
+      "type": "string",
+      "description": "Email of team member assigned to this lead"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "account_email": {
+      "type": "string",
+      "description": "Email of the account owner (workspace)"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
