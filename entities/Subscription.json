@@ -1,0 +1,59 @@
+{
+  "name": "Subscription",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the subscription owner"
+    },
+    "plan": {
+      "type": "string",
+      "enum": [
+        "free",
+        "startup",
+        "pro"
+      ],
+      "default": "free"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "trialing",
+        "active",
+        "cancelled",
+        "past_due"
+      ],
+      "default": "active"
+    },
+    "extra_seats": {
+      "type": "number",
+      "default": 0,
+      "description": "Additional purchased seats at $5/seat"
+    },
+    "trial_ends": {
+      "type": "string",
+      "format": "date",
+      "description": "Trial end date"
+    },
+    "discount_code": {
+      "type": "string",
+      "description": "Applied discount code"
+    },
+    "lead_limit_override": {
+      "type": "number",
+      "description": "Admin-set custom lead allowance (overrides plan limit)"
+    },
+    "started_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "payment_method": {
+      "type": "string",
+      "default": "paypal"
+    }
+  },
+  "required": [
+    "user_email",
+    "plan"
+  ]
+}
