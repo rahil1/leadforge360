@@ -1,1 +1,35 @@
 
+{
+  "name": "DiscountCode",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "Discount code (uppercase)"
+    },
+    "percent_off": {
+      "type": "number",
+      "description": "Percentage discount (1-100)"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "max_uses": {
+      "type": "number",
+      "description": "Maximum redemptions allowed"
+    },
+    "times_used": {
+      "type": "number",
+      "default": 0
+    },
+    "expires_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "code",
+    "percent_off"
+  ]
+}
